@@ -38,6 +38,17 @@ body {
 	p {font-size: 18px;}
 }
 
+.caption {
+  	h3 {
+    	font-size: 20px;
+    	margin: 2px;
+  	}
+	p {
+	    font-size: 15px;
+	    margin: 0px;
+	  }
+}
+
 @font-face {
     font-family: 'caviar_dreamsbold';
     src: url('Caviar_Dreams_Bold-webfont.eot');
