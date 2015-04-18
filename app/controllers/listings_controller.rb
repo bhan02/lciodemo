@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /listings
@@ -76,8 +76,8 @@ class ListingsController < ApplicationController
     end
 
     def check_user
-      if current_user != @listing.user_id
-        redirect_to root_url, alert: "Sorry, this PD listing belongs to someone else."
+      if current_user != @listing.user
+        redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
       end
     end    
 end
