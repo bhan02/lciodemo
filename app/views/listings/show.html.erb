@@ -18,8 +18,12 @@
 		<br>
 		<h6>Price</h6>
 		<p><%= number_to_currency(@listing.price) %></p>
-
+		<br>
+		<div class="center">
+			<%= link_to "Booking Request Form", new_listing_booking_path(@listing), class: "btn btn-primary" %>
+		</div>
 	</div>
+
 </div>	
 
 <% if current_user == @listing.user %>
