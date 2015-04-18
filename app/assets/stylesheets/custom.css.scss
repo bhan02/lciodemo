@@ -8,6 +8,17 @@ body {
 	margin:0px;
 }
 
+.jumbotron {
+	background-image: url('dinosaur.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	h1, h2 {
+    font-family: guardian-egyptt, georgia, serif;
+  	}
+  	padding-right: 0px;
+  	padding-left: 0px;
+}
+
 /* 
 .background {
 	background: url('teacher.jpg') no-repeat fixed 100%;
