@@ -48,12 +48,33 @@ body {
 .caption {
   	h3 {
     	font-size: 20px;
-    	margin: 2px;
+    	margin: 5px;
   	}
 	p {
 	    font-size: 15px;
-	    margin: 0px;
-	  }
+	    margin: 5px;
+	}
+	h4 {
+		font-weight: bold;
+		font-size: 15px;
+		margin: 5px;
+	}    
+	    
+}
+
+.footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 40px;
+	width: 100%;
+	font-size: 12px;
+	font-family: verdana;
+	color: #E4E4E4;	
+	background-color: #2a2a2a;
+	padding: 12px 10px;
+	display: inline;
+
 }
 
 @font-face {

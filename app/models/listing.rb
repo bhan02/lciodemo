@@ -13,4 +13,6 @@ class Listing < ActiveRecord::Base
   validates :name, :description, :expertise, :pd_offering, presence: true
   validates_attachment_presence :image
 
+  belongs_to :user
+
 end  
