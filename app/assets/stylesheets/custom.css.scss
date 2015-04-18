@@ -4,7 +4,20 @@ body {
 	background-color: #F5F5F1;
 	color: #333333;
 	font-family: source_sans_prolight, Arial, Helvetica, sans-serif;
+	padding:0px;
+	margin:0px;
 }
+
+/* 
+.background {
+	background: url('teacher.jpg') no-repeat fixed 100%;
+	background-size:cover;
+	width:100%;
+	min-height:900px;
+	margin:0px;
+	padding:0px;
+}
+*/
 
 .navbar-default {
 	background-color: #FFFFFF;
@@ -88,3 +101,4 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+
