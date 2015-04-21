@@ -1,26 +1,21 @@
+# new start
+
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  # GET /orders
-  # GET /orders.json
-  def index
-    @orders = Order.all
+  def sales
+    @orders = Order.all.where(seller: current_user).order("created_at DESC")
   end
 
-  # GET /orders/1
-  # GET /orders/1.json
-  def show
+  def purchases
+    @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
   # GET /orders/new
   def new
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
-  end
-
-  # GET /orders/1/edit
-  def edit
   end
 
   # POST /orders
@@ -34,38 +29,15 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
 
+
     respond_to do |format|
       if @order.save
-        format.html { redirect_to root_url, notice: 'Booking request was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        format.html { redirect_to root_url, notice: "Booking request successful!" }
+        format.json { render action: 'show', status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
-  def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /orders/1
-  # DELETE /orders/1.json
-  def destroy
-    @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Booking was successfully removed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -80,3 +52,4 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:school, :address, :city, :state, :zip, :phone_number, :desired_PD_dates)
     end
 end
+
