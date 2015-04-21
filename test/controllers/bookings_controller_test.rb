@@ -18,7 +18,7 @@ class BookingsControllerTest < ActionController::TestCase
 
   test "should create booking" do
     assert_difference('Booking.count') do
-      post :create, booking: { address: @booking.address, city: @booking.city, desired_dates: @booking.desired_dates, phone_number: @booking.phone_number, school: @booking.school, state: @booking.state, zip: @booking.zip }
+      post :create, booking: { address: @booking.address, city: @booking.city, desired_PD_dates: @booking.desired_PD_dates, phone_number: @booking.phone_number, school: @booking.school, state: @booking.state, zip: @booking.zip }
     end
 
     assert_redirected_to booking_path(assigns(:booking))
@@ -35,7 +35,7 @@ class BookingsControllerTest < ActionController::TestCase
   end
 
   test "should update booking" do
-    patch :update, id: @booking, booking: { address: @booking.address, city: @booking.city, desired_dates: @booking.desired_dates, phone_number: @booking.phone_number, school: @booking.school, state: @booking.state, zip: @booking.zip }
+    patch :update, id: @booking, booking: { address: @booking.address, city: @booking.city, desired_PD_dates: @booking.desired_PD_dates, phone_number: @booking.phone_number, school: @booking.school, state: @booking.state, zip: @booking.zip }
     assert_redirected_to booking_path(assigns(:booking))
   end
 

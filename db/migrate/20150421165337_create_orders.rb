@@ -1,13 +1,13 @@
-class CreateBookings < ActiveRecord::Migration
+class CreateOrders < ActiveRecord::Migration
   def change
-    create_table :bookings do |t|
+    create_table :orders do |t|
       t.string :school
       t.string :address
       t.string :city
       t.string :state
       t.integer :zip
       t.string :phone_number
-      t.text :desired_dates
+      t.string :desired_PD_dates
 
       t.timestamps null: false
     end

@@ -1,47 +1,46 @@
-<%= form_for([@listing, @booking]) do |f| %>
-  <% if @booking.errors.any? %>
+<%= form_for([@listing, @order]) do |f| %>
+  <% if @order.errors.any? %>
     <div id="error_explanation", class="alert alert-danger alert-dismissable">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-      <% @booking.errors.full_messages.each do |message| %>
+      <% @order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-
   <div class="form-group">
-    <%= f.label :school %><br>
+    <%= f.label :school %>
     <%= f.text_field :school, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :address %><br>
+    <%= f.label :address %>
     <%= f.text_field :address, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :city %><br>
+    <%= f.label :city %>
     <%= f.text_field :city, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :state %><br>
+    <%= f.label :state %>
     <%= f.text_field :state, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :zip %><br>
+    <%= f.label :zip %>
     <%= f.number_field :zip, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :phone_number %><br>
+    <%= f.label :phone_number %>
     <%= f.text_field :phone_number, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :desired_dates %><br>
-    <%= f.text_area :desired_dates, class: "form-control" %>
+    <%= f.label :desired_PD_dates %>
+    <%= f.text_field :desired_PD_dates, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.submit "Submit", class: "btn btn-success" %>
+    <%= f.submit "Submit Booking Request", class: "btn btn-success" %>
   </div>
 <% end %>
