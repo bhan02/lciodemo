@@ -10,6 +10,13 @@
 
 <br>
 
+<% if user_signed_in? %>
+  <%= link_to "Create New PD Offering", new_listing_path, class: "btn btn-link", data: { no_turbolink: true } %>
+<% end %>
+
+<br>
+<br>
+
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-3">
@@ -28,9 +35,4 @@
   <% end %>
 </div>
 
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
-<% end %>  
 
