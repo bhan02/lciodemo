@@ -4,13 +4,13 @@ class ListingsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def seller
-    @listings = Listing.where(user: current_user).order("created_at DESC")
+    @listings = Listing.where(user: current_user).booking("created_at DESC")
   end  
 
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
+    @listings = Listing.all.booking("created_at DESC")
   end
 
   # GET /listings/1
@@ -63,7 +63,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+      format.html { redirect_to listings_url, notice: 'Listing was successfully deleted.' }
       format.json { head :no_content }
     end
   end

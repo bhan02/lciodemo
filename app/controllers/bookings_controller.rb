@@ -2,6 +2,14 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+  def sales
+    @bookings = Booking.all.where(seller: current_user).booking("created_at DESC")
+  end
+
+  def purchases
+    @bookings = Booking.all.where(buyer: current_user).booking("created_at DESC")
+  end
+
   # GET /bookings
   # GET /bookings.json
   def index
@@ -64,7 +72,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking request was successfully destroyed.' }
+      format.html { redirect_to bookings_url, notice: 'Booking request was successfully removed.' }
       format.json { head :no_content }
     end
   end

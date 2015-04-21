@@ -3,7 +3,7 @@
     <div id="error_explanation", class="alert alert-danger alert-dismissable">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-      
+
       <ul>
       <% @booking.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="form-group">
     <%= f.label :school %><br>

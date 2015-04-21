@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :listings do
-    resources :bookings
+    resources :bookings, only: [:new, :create]
   end
     
-  get 'pages/about'
-  get 'pages/contact'
+  get "pages/about"
+  get "pages/contact"
   get 'seller' => "listings#seller"
+  get 'sales' => "bookings#sales"
+  get 'purchases' => "bookings#purchases"
 
   root 'listings#index'
 
