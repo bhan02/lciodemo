@@ -6,12 +6,13 @@
     <h3><%= @listing.name %></h3>
     <h4><%= number_to_currency(@listing.price) %></h4>
   </div>
+
 <div class="col-md-8">
   <%= form_for([@listing, @order]) do |f| %>
     <% if @order.errors.any? %>
       <div id="error_explanation", class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+        <h4><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h4>
 
         <ul>
         <% @order.errors.full_messages.each do |message| %>
@@ -21,62 +22,51 @@
       </div>
     <% end %>
 
-    <div class="form-group">
-        <div class="row">
-          <div class="col-md-10">
-            <%= f.label :school %>
-            <%= f.text_field :school, class: "form-control" %>
-          </div>
-        </div>
+    <div id="stripe_error" class="alert alert-danger" style="display:none">
+      <noscript>Javascript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
     </div>
-    <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
+
+    <div class="form-group">  
+      <%= f.label :school %>
+      <%= f.text_field :school, class: "form-control" %>
+    </div>
+    <div class="form-group">     
             <%= f.label :address %>
-            <%= f.text_field :address, class: "form-control" %>
-           </div>
-        </div>
+            <%= f.text_field :address, class: "form-control" %>         
     </div>
     <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
+     
             <%= f.label :city %>
             <%= f.text_field :city, class: "form-control" %>
-           </div>
-        </div>
+        
     </div>
     <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
             <%= f.label :state %>
             <%= f.text_field :state, class: "form-control" %>
-          </div>
-      </div>
+        
     </div>
     <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
+    
             <%= f.label :zip %>
             <%= f.number_field :zip, class: "form-control" %>
-          </div>
-      </div>
+        
     </div>
     <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
+      
             <%= f.label :phone_number %>
             <%= f.text_field :phone_number, class: "form-control" %>
-          </div>
-      </div>
+       
     </div>
     <div class="form-group">
-      <div class="row">
-          <div class="col-md-10">
+      
             <%= f.label :desired_PD_dates %>
             <%= f.text_field :desired_PD_dates, class: "form-control" %>
-           </div>
-        </div>
+           
     </div>
+
+    <br>
+    <p>Please provide payment information ONLY if you have decided to move forward with booking the provider.</p>
+    <br>
 
     <div class="form-group">
       <div class="row">
@@ -107,6 +97,7 @@
     <div class="form-group">
       <%= f.submit "Submit Booking Request", class: "btn btn-success" %>
     </div>
+
   <% end %>
 </div>
 
