@@ -9,7 +9,7 @@ class Listing < ActiveRecord::Base
   	end  			
   	
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/	
-  validates :name, :description, :expertise, :pd_offering, presence: true
+  validates :listing_name, :description, :expertise, :pd_offering, presence: true
   validates_attachment_presence :image
 
   belongs_to :user

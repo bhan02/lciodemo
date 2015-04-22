@@ -43,7 +43,7 @@
         <div class="thumbnail">
             <%= link_to image_tag(listing.image.url), listing %>
             <div class="caption">
-              <h3><%= listing.name %></h3>
+              <h3><%= listing.listing_name %></h3>
               <h4><%= "PD Topic: #{listing.pd_offering}" %></h4>
               <p><%= number_to_currency(listing.price) %></p>            
               <% if (user_signed_in?) && (current_user == listing.user) %>
