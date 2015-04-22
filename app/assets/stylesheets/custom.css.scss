@@ -8,30 +8,24 @@ body {
 	margin:0px;
 }
 
-.jumbotron {
-	background-image: url('https://www.dropbox.com/s/npzwxv4slgulfxx/dinosaur.jpg?raw=1');
-	background-size: cover;
-	background-repeat: no-repeat;
-	h1, h2 {
-    font-family: guardian-egyptt, georgia, serif;
-  	}
-  	padding-right: 0px;
-  	padding-left: 0px;
+.container-fluid {
+	width: 100%;
 }
 
-/* 
-.background {
-	background: url('teacher.jpg') no-repeat fixed 100%;
-	background-size:cover;
-	width:100%;
-	min-height:900px;
-	margin:0px;
-	padding:0px;
+.jumbotron {
+	background-image: url('https://www.dropbox.com/s/svw5nfm9dlwimab/wheel2.jpg?raw=1');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 650px;
+	h1, h2 {
+    font-family: guardian-egyptt, georgia, serif;
+    color: white;
+  	}
 }
-*/
 
 .navbar-default {
 	background-color: #FFFFFF;
+	margin-bottom: 0;
 }
 
 .navbar-default .navbar-brand {
@@ -52,6 +46,15 @@ body {
 	text-align: center;
 }
  
+
+.main-container {
+	h3 {
+	font-size: 18px;
+	font-family: verdana, sans-serif;
+	}
+}
+
+
 .col-md-3:nth-child(4n+1) {
 	clear: left;
 }
@@ -86,6 +89,7 @@ body {
 	    
 }
 
+
 .footer {
 	position: fixed;
 	left: 0px;
@@ -98,8 +102,24 @@ body {
 	background-color: #2a2a2a;
 	padding: 12px 10px;
 	display: inline;
-
 }
+
+
+/*
+.footer {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 40px;
+	width: 100%;
+	font-size: 12px;
+	font-family: verdana;
+	color: #E4E4E4;	
+	background-color: #2a2a2a;
+	padding: 12px 10px;
+	display: inline;
+}
+*/
 
 @font-face {
     font-family: 'caviar_dreamsbold';
@@ -112,4 +132,5 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+
 
