@@ -80,7 +80,7 @@
               <h3><%= listing.listing_name %></h3>
   
               <p><strong>Topic: </strong><%= "#{listing.pd_offering}" %></p>
-              <p><%= number_to_currency(listing.price) %></p>            
+              <p><strong>Price: </strong><%= number_to_currency(listing.price) %></p>            
               <% if (user_signed_in?) && (current_user == listing.user) %>
               <% end %>  
             </div>              
